@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.21.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: tobakko-service
+  name: tobakko-service
+spec:
+  ports:
+  - name: "tobakko-service"
+    port: 8081
+    targetPort: 8081
+  selector:
+    io.kompose.service: tobakko-service
+status:
+  loadBalancer: {}
